@@ -5,13 +5,23 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        seen = {}
-        for i, num in enumerate(nums):
-            complement = target - num
-            if complement in seen:
-                return [seen[complement], i]
-            else:
-                seen[num] = i
 
+                # left = 0
+        # right = len(nums)-1
+        # while left < right:
+        #     if nums[left] + nums[right] == target:
+        #         return [left, right]
+        #     elif nums[left] + nums[right] < target:
+        #         left = left + 1
+        #     else:
+        #         right =  right - 1
 
-
+        temp=dict()
+        for i , n in enumerate(nums):
+            print(i,n)
+            diff = target - n
+            if diff in temp:
+                return [temp[diff], i]
+            temp[n]=i
+            
+        
